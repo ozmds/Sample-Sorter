@@ -3,6 +3,9 @@ class SortedList:
         self.words = word_dict
         self.list = []
 
+    def getlist(self):
+        return self.list
+
     def spliceintolist(self, word, i):
         self.list = self.list[:i] + [word] + self.list[i:]
 

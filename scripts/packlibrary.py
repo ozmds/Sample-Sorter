@@ -1,16 +1,14 @@
 import os, os.path, shutil, sys, time, json, copy
 
 from sample import Sample
-from report import Report
-from conversekeyword import InstrumentLibrary
-from conversekeyword import SortedList
-from conversedata import total_count
+from instrumentlibrary import InstrumentLibrary
+from packreport import PackLibraryReport
 
 class PackLibrary:
     def __init__(self):
         self.packs = {}
-        self.sourcepath = os.path.abspath('Source Files')
-        self.destpath = os.path.abspath('Sorted Files')
+        self.sourcepath = os.path.abspath('../source files')
+        self.destpath = os.path.abspath('../sorted files')
 
     def addsample(self, f, pack):
         sample = Sample(f, pack)
@@ -55,6 +53,32 @@ class PackLibrary:
                 if not sample.name + '.wav' in os.listdir(path):
                     self.movesample(path, pack, sample)
 
+    def initJSON(self):
+        data = copy.deepcopy(self.packs)
+        for pack in data.keys():
+            for i in range(len(data[pack])):
+                data[pack][i] = data[pack][i].todict()
+        return data
+
+    def editJSON(self):
+        data = json.loads(open('../data/pack.json', 'r').read())
+        for pack in self.packs.keys():
+            if not (pack in data.keys() or (len(self.packs[pack]) == len(data[pack]))):
+                data[pack] = []
+                for i in range(len(self.packs[pack])):
+                    data[pack].append(self.packs[pack][i].todict())
+        return data
+
+    def setsubinstrument(data):
+        for pack in data.keys():
+            if not data[pack][0]["subinstrument"]:
+                instrument_library = InstrumentLibrary(self.packs[pack])
+                instrument_library.populate()
+                instrument_library.sort()
+                for i in range(len(data[pack])):
+                    data[pack][i]["subinstrument"] = self.packs[pack][i].subinstrument
+        return data
+
     def create(self, arguments):
         if len(arguments) == 2 and arguments[1] == 'delete':
             shutil.rmtree(self.destpath)
@@ -62,29 +86,14 @@ class PackLibrary:
         self.trycreatepath(self.destpath)
         self.initpacks()
 
-        if not os.path.exists('data.json'):
-            data = copy.deepcopy(self.packs)
-            for pack in data.keys():
-                for i in range(len(data[pack])):
-                    data[pack][i] = data[pack][i].toDict()
+        if not os.path.exists('../data/pack.json'):
+            data = self.initJSON()
         else:
-            data = json.loads(open('data.json', 'r').read())
-            for pack in self.packs.keys():
-                if not (pack in data.keys() or len(self.packs[pack]) == len(data[pack])):
-                    data[pack] = []
-                    for i in range(len(self.packs[pack])):
-                        data[pack].append(self.packs[pack][i].toDict())
+            data = self.editJSON()
 
-        for pack in data.keys():
-            if not data[pack][0]["subinstrument"]:
-                print(self.packs[pack][0].subinstrument)
-                instrument_library = InstrumentLibrary(self.packs[pack])
-                instrument_library.populate()
-                instrument_library.sort()
-                for i in range(len(data[pack])):
-                    data[pack][i]["subinstrument"] = self.packs[pack][i].subinstrument
+        data = self.subinstrument(data)
 
-        file = open('data.json', 'w')
+        file = open('../data/pack.json', 'w')
         file.write(json.dumps(data, indent=4))
         file.close()
 

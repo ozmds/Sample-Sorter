@@ -1,11 +1,16 @@
+from sortedlist import SortedList
+
 class InstrumentLibrary:
     def __init__(self, pack):
         self.pack = pack
         self.library = {}
+        self.instrumentpack = {}
 
     def createinstrument(self, key):
         if not key in self.library.keys():
             self.library[key] = {}
+        if not key in self.instrumentpack.keys():
+            self.instrumentpack[key] = []
 
     def populatewords(self, instrument, name):
         words = name.split('-')
@@ -19,38 +24,56 @@ class InstrumentLibrary:
         for sample in self.pack:
             self.createinstrument(sample.instrument)
             self.populatewords(sample.instrument, sample.basename)
+            self.instrumentpack[sample.instrument].append(sample)
+
+    def listallwords(self, inst_dict):
+        sorted_list = SortedList(inst_dict)
+        sorted_list.sort()
+        sorted_list.write()
+
+    def listpossibleoptions(self, words, instrument):
+        words = words.split()
+        possible_options = {}
+        for word in words:
+            possible_options[word] = self.library[instrument][word]
+        possible_options = SortedList(possible_options)
+        possible_options.sort()
+        return possible_options.getlist()
+
+    def getcount(self, instrument, possible_options):
+        count = 0
+        for sample in self.instrumentpack[instrument]
+            for word in possible_options:
+                if word in sample.basename:
+                    count += 1
+                    break
+        return count
+
+    def setconfirm(self, confirm):
+        if confirm == 'y':
+            confirm = True
+        else:
+            confirm = False
+        return confirm
+
+    def setsubinstrument(self, sample_list, possible_options):
+        for sample in sample_list:
+            for word in possible_options:
+                if word in sample.basename:
+                    sample.setsubinstrument(word)
+                    break
+            if sample.subinstrument == None:
+                sample.setsubinstrument('other')
 
     def sort(self):
         for instrument in self.library.keys():
-            sorted_list = SortedList(self.library[instrument])
-            sorted_list.sort()
-            sorted_list.write()
+            self.listallwords(self.library[instrument])
             confirm = False
             while not confirm:
-                words = raw_input('Please list the words that you would want to categorize by: ')
-                words = words.split()
-                new_dict = {}
-                for word in words:
-                    new_dict[word] = self.library[instrument][word]
-                input_list = SortedList(new_dict)
-                input_list.sort()
-                count = 0
-                for sample in self.pack:
-                    if sample.instrument == instrument:
-                        for word in input_list.list:
-                            if word in sample.basename:
-                                count += 1
-                                break
+                message = 'Please list the words that you would want to categorize by: '
+                words = raw_input(message)
+                possible_options = self.listpossibleoptions(words, instrument)
+                count = self.getcount(instrument, possible_options)
                 confirm = raw_input('This would categorize ' + str(count) + ' of a possible ' + str(len(self.pack)) + ' samples, press y to confirm: ')
-                if confirm == 'y':
-                    confirm = True
-                else:
-                    confirm = False
-            for sample in self.pack:
-                if sample.instrument == instrument:
-                    for word in input_list.list:
-                        if word in sample.basename:
-                            sample.setsubinstrument(word)
-                            break
-                    if sample.subinstrument == None:
-                        sample.setsubinstrument('other')
+                confirm = self.setconfirm(confirm)
+            self.setsubinstrument(self.instrumentpack[instrument], possible_options)

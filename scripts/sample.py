@@ -1,5 +1,3 @@
-import json
-
 class Sample:
     def __init__(self, f, pack):
         self.filename = f
@@ -10,11 +8,12 @@ class Sample:
         self.basename = None
         self.bpm = 0
         self.subinstrument = None
+
         self.dupindex = None
 
         self.initsample()
 
-    def toDict(self):
+    def todict(self):
         data = {}
         data["filename"] = self.filename
         data["pack"] = self.pack
