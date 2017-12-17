@@ -22,9 +22,9 @@ class InstrumentLibrary:
 
     def populate(self):
         for sample in self.pack:
-            self.createinstrument(sample.instrument)
-            self.populatewords(sample.instrument, sample.basename)
-            self.instrumentpack[sample.instrument].append(sample)
+            self.createinstrument(sample["instrument"])
+            self.populatewords(sample["instrument"], sample["basename"])
+            self.instrumentpack[sample["instrument"]].append(sample)
 
     def listallwords(self, inst_dict):
         sorted_list = SortedList(inst_dict)
@@ -42,9 +42,9 @@ class InstrumentLibrary:
 
     def getcount(self, instrument, possible_options):
         count = 0
-        for sample in self.instrumentpack[instrument]
+        for sample in self.instrumentpack[instrument]:
             for word in possible_options:
-                if word in sample.basename:
+                if word in sample["basename"]:
                     count += 1
                     break
         return count
@@ -57,15 +57,20 @@ class InstrumentLibrary:
         return confirm
 
     def setsubinstrument(self, sample_list, possible_options):
+        new_samples = []
         for sample in sample_list:
             for word in possible_options:
-                if word in sample.basename:
-                    sample.setsubinstrument(word)
+                if word in sample["basename"]:
+                    sample["subinstrument"] = word
                     break
-            if sample.subinstrument == None:
-                sample.setsubinstrument('other')
+            if sample["subinstrument"] == None:
+                sample["subinstrument"] = 'other'
+            new_samples.append(sample)
+
+        return new_samples
 
     def sort(self):
+        new_pack = []
         for instrument in self.library.keys():
             self.listallwords(self.library[instrument])
             confirm = False
@@ -76,4 +81,6 @@ class InstrumentLibrary:
                 count = self.getcount(instrument, possible_options)
                 confirm = raw_input('This would categorize ' + str(count) + ' of a possible ' + str(len(self.pack)) + ' samples, press y to confirm: ')
                 confirm = self.setconfirm(confirm)
-            self.setsubinstrument(self.instrumentpack[instrument], possible_options)
+            sample_list = self.setsubinstrument(self.instrumentpack[instrument], possible_options)
+            new_pack = new_pack + sample_list
+        return new_pack

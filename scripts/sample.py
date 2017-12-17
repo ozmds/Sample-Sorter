@@ -26,9 +26,6 @@ class Sample:
 
         return data
 
-    def setsubinstrument(self, x):
-        self.subinstrument = x
-
     def initsample(self):
         split = self.stripwav(self.filename.split('_'))
         split = self.setdupindex(split)

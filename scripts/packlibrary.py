@@ -5,14 +5,16 @@ from instrumentlibrary import InstrumentLibrary
 from packreport import PackLibraryReport
 
 class PackLibrary:
-    def __init__(self):
-        self.packs = {}
-        self.sourcepath = os.path.abspath('../source files')
-        self.destpath = os.path.abspath('../sorted files')
+    def __init__(self, spath, dpath, countfile, datafile):
+        self.data = {}
+        self.sourcepath = os.path.abspath(spath)
+        self.destpath = os.path.abspath(dpath)
+        self.countfile = countfile
+        self.datafile = datafile
 
     def addsample(self, f, pack):
         sample = Sample(f, pack)
-        self.packs[pack].append(sample)
+        self.data[pack].append(sample.todict())
 
     def addfile(self, filename, path, pack):
         if filename[-4:] == '.wav':
@@ -21,14 +23,14 @@ class PackLibrary:
             os.remove(os.path.join(path, filename))
 
     def movesample(self, path, pack, sample):
-        start_path = os.path.join(self.sourcepath, pack, sample.filename)
-        end_path = os.path.join(path, sample.name + '.wav')
+        start_path = os.path.join(self.sourcepath, pack, sample["filename"])
+        end_path = os.path.join(path, sample["name"] + '.wav')
         shutil.copy2(start_path, end_path)
 
     def createorderpath(self, order, sample):
         path = self.destpath
         for i in range(len(order)):
-            path += '/' + getattr(sample, order[i])
+            path += '/' + sample[order[i]]
         return path
 
     def trycreatepath(self, path):
@@ -37,64 +39,57 @@ class PackLibrary:
         except:
             pass
 
-    def initpacks(self):
-        for pack in os.listdir(self.sourcepath):
-            path = os.path.join(self.sourcepath, pack)
-            if os.path.isdir(path):
-                self.packs[pack] = []
-                for f in os.listdir(path):
-                    self.addfile(f, path, pack)
-
     def sortfiles(self, order=['instrument', 'subinstrument', 'type', 'bpm', 'pack']):
-        for pack in self.packs.keys():
-            for sample in self.packs[pack]:
+        for pack in self.data.keys():
+            for sample in self.data[pack]:
                 path = self.createorderpath(order, sample)
                 self.trycreatepath(path)
-                if not sample.name + '.wav' in os.listdir(path):
+                if not sample["name"] + '.wav' in os.listdir(path):
                     self.movesample(path, pack, sample)
 
     def initJSON(self):
-        data = copy.deepcopy(self.packs)
-        for pack in data.keys():
-            for i in range(len(data[pack])):
-                data[pack][i] = data[pack][i].todict()
-        return data
+        self.data = {}
+        for pack in os.listdir(self.sourcepath):
+            path = os.path.join(self.sourcepath, pack)
+            if os.path.isdir(path):
+                self.data[pack] = []
+                for f in os.listdir(path):
+                    self.addfile(f, path, pack)
 
     def editJSON(self):
-        data = json.loads(open('../data/pack.json', 'r').read())
-        for pack in self.packs.keys():
-            if not (pack in data.keys() or (len(self.packs[pack]) == len(data[pack]))):
-                data[pack] = []
-                for i in range(len(self.packs[pack])):
-                    data[pack].append(self.packs[pack][i].todict())
-        return data
+        self.data = json.loads(open(self.datafile, 'r').read())
+        for pack in os.listdir(self.sourcepath):
+            sample_list = os.listdir(os.path.join(self.sourcepath, pack))
+            pack_count = len(sample_list)
+            if not (pack in self.data.keys() or (pack_count == len(self.data[pack]))):
+                self.data[pack] = []
+                for f in sample_list:
+                    self.addfile(f, sample_list, pack)
 
-    def setsubinstrument(data):
-        for pack in data.keys():
-            if not data[pack][0]["subinstrument"]:
-                instrument_library = InstrumentLibrary(self.packs[pack])
+    def setsubinstrument(self):
+        for pack in self.data.keys():
+            if not self.data[pack][0]["subinstrument"]:
+                instrument_library = InstrumentLibrary(self.data[pack])
                 instrument_library.populate()
-                instrument_library.sort()
-                for i in range(len(data[pack])):
-                    data[pack][i]["subinstrument"] = self.packs[pack][i].subinstrument
-        return data
+                new_pack = instrument_library.sort()
+                self.data[pack] = new_pack
 
     def create(self, arguments):
         if len(arguments) == 2 and arguments[1] == 'delete':
             shutil.rmtree(self.destpath)
+            os.remove(self.datafile)
 
         self.trycreatepath(self.destpath)
-        self.initpacks()
 
-        if not os.path.exists('../data/pack.json'):
-            data = self.initJSON()
+        if not os.path.exists(self.datafile):
+            self.initJSON()
         else:
-            data = self.editJSON()
+            self.editJSON()
 
-        data = self.subinstrument(data)
+        self.setsubinstrument()
 
-        file = open('../data/pack.json', 'w')
-        file.write(json.dumps(data, indent=4))
+        file = open(self.datafile, 'w')
+        file.write(json.dumps(self.data, indent=4))
         file.close()
 
         if len(arguments) == 1:
@@ -102,4 +97,4 @@ class PackLibrary:
         elif arguments[1] != 'delete':
             self.sortfiles(sys.argv[1:])
 
-        PackLibraryReport(self.packs)
+        PackLibraryReport(self.data, self.countfile)

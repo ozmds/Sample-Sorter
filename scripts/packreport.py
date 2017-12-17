@@ -2,7 +2,8 @@ import json
 from report import Report
 
 class PackLibraryReport(Report):
-    def __init__(self, pack_library):
+    def __init__(self, pack_library, count_file):
+        self.countfile = count_file
         data = self.createdata(pack_library)
         Report.__init__(self, data, 'report.html', 'Converse Library Report')
 
@@ -18,7 +19,7 @@ class PackLibraryReport(Report):
         pack_header = ['Pack Name', 'Total Number of Files', 'Number of Files Present',
                        'Number of Files Missing', 'Package Completion Percentage']
         data.append(pack_header)
-        total_count = json.loads('../data/count.json')
+        total_count = json.loads(file(self.countfile, 'r').read())
         for pack in pack_library.keys():
-            data.append(self.createpackdata(pack, len(pack_library[pack], total_count[pack])))
+            data.append(self.createpackdata(pack, len(pack_library[pack]), total_count[pack]))
         return data
