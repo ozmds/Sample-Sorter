@@ -1,8 +1,9 @@
 from sortedlist import SortedList
 
 class InstrumentLibrary:
-    def __init__(self, pack):
+    def __init__(self, pack, name):
         self.pack = pack
+        self.packname = name
         self.library = {}
         self.instrumentpack = {}
 
@@ -72,15 +73,19 @@ class InstrumentLibrary:
     def sort(self):
         new_pack = []
         for instrument in self.library.keys():
+            print self.packname + ': ' + instrument
             self.listallwords(self.library[instrument])
             confirm = False
             while not confirm:
                 message = 'Please list the words that you would want to categorize by: '
                 words = raw_input(message)
                 possible_options = self.listpossibleoptions(words, instrument)
-                count = self.getcount(instrument, possible_options)
-                confirm = raw_input('This would categorize ' + str(count) + ' of a possible ' + str(len(self.pack)) + ' samples, press y to confirm: ')
-                confirm = self.setconfirm(confirm)
+                if len(possible_options) > 7:
+                    print 'Sorry that is too many options, please try again.'
+                else:
+                    count = self.getcount(instrument, possible_options)
+                    confirm = raw_input('This would categorize ' + str(count) + ' of a possible ' + str(len(self.instrumentpack[instrument])) + ' samples, press y to confirm: ')
+                    confirm = self.setconfirm(confirm)
             sample_list = self.setsubinstrument(self.instrumentpack[instrument], possible_options)
             new_pack = new_pack + sample_list
         return new_pack

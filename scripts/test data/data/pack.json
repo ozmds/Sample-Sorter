@@ -1,0 +1,608 @@
+{
+    "Jazz Sax and Bass": [
+        {
+            "subinstrument": "bass", 
+            "name": "david-lizmi-bass-10", 
+            "basename": "bass-10", 
+            "bpm": "128", 
+            "filename": "david-lizmi_bass-10_bass_one_shot_128.wav.wav", 
+            "instrument": "bass", 
+            "type": "one-shot", 
+            "pack": "Jazz Sax and Bass"
+        }, 
+        {
+            "subinstrument": "bass", 
+            "name": "david-lizmi-bass-15", 
+            "basename": "bass-15", 
+            "bpm": "128", 
+            "filename": "david-lizmi_bass-15_bass_one_shot_128.wav.wav", 
+            "instrument": "bass", 
+            "type": "one-shot", 
+            "pack": "Jazz Sax and Bass"
+        }, 
+        {
+            "subinstrument": "bass", 
+            "name": "david-lizmi-bass-19", 
+            "basename": "bass-19", 
+            "bpm": "128", 
+            "filename": "david-lizmi_bass-19_bass_one_shot_128.wav.wav", 
+            "instrument": "bass", 
+            "type": "one-shot", 
+            "pack": "Jazz Sax and Bass"
+        }, 
+        {
+            "subinstrument": "bass", 
+            "name": "david-lizmi-bass-7", 
+            "basename": "bass-7", 
+            "bpm": "128", 
+            "filename": "david-lizmi_bass-7_bass_one_shot_128.wav.wav", 
+            "instrument": "bass", 
+            "type": "one-shot", 
+            "pack": "Jazz Sax and Bass"
+        }, 
+        {
+            "subinstrument": "bass", 
+            "name": "david-lizmi-bass-loop-10", 
+            "basename": "bass-loop-10", 
+            "bpm": "152", 
+            "filename": "david-lizmi_bass-loop-10_bass_loop_152.wav.wav", 
+            "instrument": "bass", 
+            "type": "loop", 
+            "pack": "Jazz Sax and Bass"
+        }, 
+        {
+            "subinstrument": "bass", 
+            "name": "david-lizmi-bass-loop-14", 
+            "basename": "bass-loop-14", 
+            "bpm": "152", 
+            "filename": "david-lizmi_bass-loop-14_bass_loop_152.wav.wav", 
+            "instrument": "bass", 
+            "type": "loop", 
+            "pack": "Jazz Sax and Bass"
+        }, 
+        {
+            "subinstrument": "bass", 
+            "name": "david-lizmi-bass-loop-6", 
+            "basename": "bass-loop-6", 
+            "bpm": "152", 
+            "filename": "david-lizmi_bass-loop-6_bass_loop_152.wav.wav", 
+            "instrument": "bass", 
+            "type": "loop", 
+            "pack": "Jazz Sax and Bass"
+        }, 
+        {
+            "subinstrument": "sax", 
+            "name": "timo-vollbrecht-sax-12", 
+            "basename": "sax-12", 
+            "bpm": "152", 
+            "filename": "timo-vollbrecht_sax-12_horns-and-reeds_one_shot_152.wav.wav", 
+            "instrument": "horns-and-reeds", 
+            "type": "one-shot", 
+            "pack": "Jazz Sax and Bass"
+        }, 
+        {
+            "subinstrument": "sax", 
+            "name": "timo-vollbrecht-sax-21", 
+            "basename": "sax-21", 
+            "bpm": "128", 
+            "filename": "timo-vollbrecht_sax-21_horns-and-reeds_one_shot_128.wav.wav", 
+            "instrument": "horns-and-reeds", 
+            "type": "one-shot", 
+            "pack": "Jazz Sax and Bass"
+        }, 
+        {
+            "subinstrument": "sax", 
+            "name": "timo-vollbrecht-sax-24", 
+            "basename": "sax-24", 
+            "bpm": "128", 
+            "filename": "timo-vollbrecht_sax-24_horns-and-reeds_one_shot_128.wav.wav", 
+            "instrument": "horns-and-reeds", 
+            "type": "one-shot", 
+            "pack": "Jazz Sax and Bass"
+        }, 
+        {
+            "subinstrument": "sax", 
+            "name": "timo-vollbrecht-sax-33", 
+            "basename": "sax-33", 
+            "bpm": "128", 
+            "filename": "timo-vollbrecht_sax-33_horns-and-reeds_one_shot_128.wav.wav", 
+            "instrument": "horns-and-reeds", 
+            "type": "one-shot", 
+            "pack": "Jazz Sax and Bass"
+        }, 
+        {
+            "subinstrument": "sax", 
+            "name": "timo-vollbrecht-sax-35", 
+            "basename": "sax-35", 
+            "bpm": "128", 
+            "filename": "timo-vollbrecht_sax-35_horns-and-reeds_one_shot_128.wav.wav", 
+            "instrument": "horns-and-reeds", 
+            "type": "one-shot", 
+            "pack": "Jazz Sax and Bass"
+        }, 
+        {
+            "subinstrument": "sax", 
+            "name": "timo-vollbrecht-sax-7", 
+            "basename": "sax-7", 
+            "bpm": "152", 
+            "filename": "timo-vollbrecht_sax-7_horns-and-reeds_one_shot_152.wav.wav", 
+            "instrument": "horns-and-reeds", 
+            "type": "one-shot", 
+            "pack": "Jazz Sax and Bass"
+        }, 
+        {
+            "subinstrument": "sax", 
+            "name": "timo-vollbrecht-sax-9", 
+            "basename": "sax-9", 
+            "bpm": "152", 
+            "filename": "timo-vollbrecht_sax-9_horns-and-reeds_one_shot_152.wav.wav", 
+            "instrument": "horns-and-reeds", 
+            "type": "one-shot", 
+            "pack": "Jazz Sax and Bass"
+        }, 
+        {
+            "subinstrument": "sax", 
+            "name": "timo-vollbrecht-sax-loop-13", 
+            "basename": "sax-loop-13", 
+            "bpm": "152", 
+            "filename": "timo-vollbrecht_sax-loop-13_horns-and-reeds_loop_152.wav.wav", 
+            "instrument": "horns-and-reeds", 
+            "type": "loop", 
+            "pack": "Jazz Sax and Bass"
+        }, 
+        {
+            "subinstrument": "sax", 
+            "name": "timo-vollbrecht-sax-loop-15", 
+            "basename": "sax-loop-15", 
+            "bpm": "152", 
+            "filename": "timo-vollbrecht_sax-loop-15_horns-and-reeds_loop_152.wav.wav", 
+            "instrument": "horns-and-reeds", 
+            "type": "loop", 
+            "pack": "Jazz Sax and Bass"
+        }, 
+        {
+            "subinstrument": "sax", 
+            "name": "timo-vollbrecht-sax-loop-18", 
+            "basename": "sax-loop-18", 
+            "bpm": "128", 
+            "filename": "timo-vollbrecht_sax-loop-18_horns-and-reeds_loop_128.wav.wav", 
+            "instrument": "horns-and-reeds", 
+            "type": "loop", 
+            "pack": "Jazz Sax and Bass"
+        }, 
+        {
+            "subinstrument": "sax", 
+            "name": "timo-vollbrecht-sax-loop-24", 
+            "basename": "sax-loop-24", 
+            "bpm": "128", 
+            "filename": "timo-vollbrecht_sax-loop-24_horns-and-reeds_loop_128.wav.wav", 
+            "instrument": "horns-and-reeds", 
+            "type": "loop", 
+            "pack": "Jazz Sax and Bass"
+        }, 
+        {
+            "subinstrument": "sax", 
+            "name": "timo-vollbrecht-sax-loop-29", 
+            "basename": "sax-loop-29", 
+            "bpm": "128", 
+            "filename": "timo-vollbrecht_sax-loop-29_horns-and-reeds_loop_128.wav.wav", 
+            "instrument": "horns-and-reeds", 
+            "type": "loop", 
+            "pack": "Jazz Sax and Bass"
+        }, 
+        {
+            "subinstrument": "sax", 
+            "name": "timo-vollbrecht-sax-stem-2", 
+            "basename": "sax-stem-2", 
+            "bpm": "128", 
+            "filename": "timo-vollbrecht_sax-stem-2_horns-and-reeds_stem_128.wav.wav", 
+            "instrument": "horns-and-reeds", 
+            "type": "stem", 
+            "pack": "Jazz Sax and Bass"
+        }
+    ], 
+    "Electronic Indie Session": [
+        {
+            "subinstrument": "guitar", 
+            "name": "torches-balancer-mainland-mr.-james-felipe-guitar-di-stem-1", 
+            "basename": "felipe-guitar-di-stem-1", 
+            "bpm": "98", 
+            "filename": "torches-balancer-mainland-mr.-james_felipe-guitar-di-stem-1_guitar_stem_98.wav.wav", 
+            "instrument": "guitar", 
+            "type": "stem", 
+            "pack": "Electronic Indie Session"
+        }, 
+        {
+            "subinstrument": "guitar", 
+            "name": "torches-balancer-mainland-mr.-james-felipe-guitar-di-stem-2", 
+            "basename": "felipe-guitar-di-stem-2", 
+            "bpm": "100", 
+            "filename": "torches-balancer-mainland-mr.-james_felipe-guitar-di-stem-2_guitar_stem_100.wav.wav", 
+            "instrument": "guitar", 
+            "type": "stem", 
+            "pack": "Electronic Indie Session"
+        }, 
+        {
+            "subinstrument": "guitar", 
+            "name": "torches-balancer-mainland-mr.-james-felipe-guitar-loop-2", 
+            "basename": "felipe-guitar-loop-2", 
+            "bpm": "100", 
+            "filename": "torches-balancer-mainland-mr.-james_felipe-guitar-loop-2_guitar_loop_100.wav.wav", 
+            "instrument": "guitar", 
+            "type": "loop", 
+            "pack": "Electronic Indie Session"
+        }, 
+        {
+            "subinstrument": "guitar", 
+            "name": "torches-balancer-mainland-mr.-james-felipe-guitar-loop-2", 
+            "basename": "felipe-guitar-loop-2", 
+            "bpm": "128", 
+            "filename": "torches-balancer-mainland-mr.-james_felipe-guitar-loop-2_guitar_loop_128.wav.wav", 
+            "instrument": "guitar", 
+            "type": "loop", 
+            "pack": "Electronic Indie Session"
+        }, 
+        {
+            "subinstrument": "guitar", 
+            "name": "torches-balancer-mainland-mr.-james-felipe-guitar-loop-3", 
+            "basename": "felipe-guitar-loop-3", 
+            "bpm": "128", 
+            "filename": "torches-balancer-mainland-mr.-james_felipe-guitar-loop-3_guitar_loop_128.wav.wav", 
+            "instrument": "guitar", 
+            "type": "loop", 
+            "pack": "Electronic Indie Session"
+        }, 
+        {
+            "subinstrument": "guitar", 
+            "name": "torches-balancer-mainland-mr.-james-jordan-guitar-1", 
+            "basename": "jordan-guitar-1", 
+            "bpm": "None", 
+            "filename": "torches-balancer-mainland-mr.-james_jordan-guitar-1_guitar_one_shot_.wav.wav", 
+            "instrument": "guitar", 
+            "type": "one-shot", 
+            "pack": "Electronic Indie Session"
+        }, 
+        {
+            "subinstrument": "guitar", 
+            "name": "torches-balancer-mainland-mr.-james-jordan-guitar-2", 
+            "basename": "jordan-guitar-2", 
+            "bpm": "None", 
+            "filename": "torches-balancer-mainland-mr.-james_jordan-guitar-2_guitar_one_shot_.wav.wav", 
+            "instrument": "guitar", 
+            "type": "one-shot", 
+            "pack": "Electronic Indie Session"
+        }, 
+        {
+            "subinstrument": "guitar", 
+            "name": "torches-balancer-mainland-mr.-james-jordan-guitar-3", 
+            "basename": "jordan-guitar-3", 
+            "bpm": "None", 
+            "filename": "torches-balancer-mainland-mr.-james_jordan-guitar-3_guitar_one_shot_.wav.wav", 
+            "instrument": "guitar", 
+            "type": "one-shot", 
+            "pack": "Electronic Indie Session"
+        }, 
+        {
+            "subinstrument": "bells", 
+            "name": "torches-balancer-mainland-mr.-james-bells-2", 
+            "basename": "bells-2", 
+            "bpm": "None", 
+            "filename": "torches-balancer-mainland-mr.-james_bells-2_percussion_one_shot_.wav.wav", 
+            "instrument": "percussion", 
+            "type": "one-shot", 
+            "pack": "Electronic Indie Session"
+        }, 
+        {
+            "subinstrument": "bells", 
+            "name": "torches-balancer-mainland-mr.-james-bells-5", 
+            "basename": "bells-5", 
+            "bpm": "None", 
+            "filename": "torches-balancer-mainland-mr.-james_bells-5_percussion_one_shot_.wav.wav", 
+            "instrument": "percussion", 
+            "type": "one-shot", 
+            "pack": "Electronic Indie Session"
+        }, 
+        {
+            "subinstrument": "bells", 
+            "name": "torches-balancer-mainland-mr.-james-bells-loop-2", 
+            "basename": "bells-loop-2", 
+            "bpm": "100", 
+            "filename": "torches-balancer-mainland-mr.-james_bells-loop-2_percussion_loop_100.wav.wav", 
+            "instrument": "percussion", 
+            "type": "loop", 
+            "pack": "Electronic Indie Session"
+        }, 
+        {
+            "subinstrument": "bells", 
+            "name": "torches-balancer-mainland-mr.-james-bells-loop-3", 
+            "basename": "bells-loop-3", 
+            "bpm": "100", 
+            "filename": "torches-balancer-mainland-mr.-james_bells-loop-3_percussion_loop_100.wav.wav", 
+            "instrument": "percussion", 
+            "type": "loop", 
+            "pack": "Electronic Indie Session"
+        }, 
+        {
+            "subinstrument": "bells", 
+            "name": "torches-balancer-mainland-mr.-james-bells-stem-1", 
+            "basename": "bells-stem-1", 
+            "bpm": "128", 
+            "filename": "torches-balancer-mainland-mr.-james_bells-stem-1_percussion_stem_128.wav.wav", 
+            "instrument": "percussion", 
+            "type": "stem", 
+            "pack": "Electronic Indie Session"
+        }, 
+        {
+            "subinstrument": "bells", 
+            "name": "torches-balancer-mainland-mr.-james-bells-stem-2", 
+            "basename": "bells-stem-2", 
+            "bpm": "100", 
+            "filename": "torches-balancer-mainland-mr.-james_bells-stem-2_percussion_stem_100.wav.wav", 
+            "instrument": "percussion", 
+            "type": "stem", 
+            "pack": "Electronic Indie Session"
+        }, 
+        {
+            "subinstrument": "other", 
+            "name": "torches-balancer-mainland-mr.-james-cpu-di-loop-1", 
+            "basename": "cpu-di-loop-1", 
+            "bpm": "128", 
+            "filename": "torches-balancer-mainland-mr.-james_cpu-di-loop-1_synths_loop_128.wav.wav", 
+            "instrument": "synths", 
+            "type": "loop", 
+            "pack": "Electronic Indie Session"
+        }, 
+        {
+            "subinstrument": "hat", 
+            "name": "torches-balancer-mainland-mr.-james-cpu-hat-5", 
+            "basename": "cpu-hat-5", 
+            "bpm": "None", 
+            "filename": "torches-balancer-mainland-mr.-james_cpu-hat-5_synths_one_shot_.wav.wav", 
+            "instrument": "synths", 
+            "type": "one-shot", 
+            "pack": "Electronic Indie Session"
+        }, 
+        {
+            "subinstrument": "kick", 
+            "name": "torches-balancer-mainland-mr.-james-cpu-kick-1", 
+            "basename": "cpu-kick-1", 
+            "bpm": "None", 
+            "filename": "torches-balancer-mainland-mr.-james_cpu-kick-1_synths_one_shot_.wav.wav", 
+            "instrument": "synths", 
+            "type": "one-shot", 
+            "pack": "Electronic Indie Session"
+        }, 
+        {
+            "subinstrument": "kick", 
+            "name": "torches-balancer-mainland-mr.-james-cpu-kick-3", 
+            "basename": "cpu-kick-3", 
+            "bpm": "None", 
+            "filename": "torches-balancer-mainland-mr.-james_cpu-kick-3_synths_one_shot_.wav.wav", 
+            "instrument": "synths", 
+            "type": "one-shot", 
+            "pack": "Electronic Indie Session"
+        }, 
+        {
+            "subinstrument": "other", 
+            "name": "torches-balancer-mainland-mr.-james-cpu-stutter-2", 
+            "basename": "cpu-stutter-2", 
+            "bpm": "None", 
+            "filename": "torches-balancer-mainland-mr.-james_cpu-stutter-2_synths_one_shot_.wav.wav", 
+            "instrument": "synths", 
+            "type": "one-shot", 
+            "pack": "Electronic Indie Session"
+        }, 
+        {
+            "subinstrument": "bass", 
+            "name": "torches-balancer-mainland-mr.-james-bass-loop-2", 
+            "basename": "bass-loop-2", 
+            "bpm": "100", 
+            "filename": "torches-balancer-mainland-mr.-james_bass-loop-2_bass_loop_100.wav.wav", 
+            "instrument": "bass", 
+            "type": "loop", 
+            "pack": "Electronic Indie Session"
+        }
+    ], 
+    "Ethereal Guitar and Vocals": [
+        {
+            "subinstrument": "guitar", 
+            "name": "carey-clayton-feat.-lewis-and-ariah-noetzel-guitar-1", 
+            "basename": "guitar-1", 
+            "bpm": "None", 
+            "filename": "carey-clayton-feat.-lewis-and-ariah-noetzel_guitar-1_guitar_one_shot_.wav.wav", 
+            "instrument": "guitar", 
+            "type": "one-shot", 
+            "pack": "Ethereal Guitar and Vocals"
+        }, 
+        {
+            "subinstrument": "guitar", 
+            "name": "carey-clayton-feat.-lewis-and-ariah-noetzel-guitar-2", 
+            "basename": "guitar-2", 
+            "bpm": "None", 
+            "filename": "carey-clayton-feat.-lewis-and-ariah-noetzel_guitar-2_guitar_one_shot_.wav.wav", 
+            "instrument": "guitar", 
+            "type": "one-shot", 
+            "pack": "Ethereal Guitar and Vocals"
+        }, 
+        {
+            "subinstrument": "guitar", 
+            "name": "carey-clayton-feat.-lewis-and-ariah-noetzel-guitar-3", 
+            "basename": "guitar-3", 
+            "bpm": "None", 
+            "filename": "carey-clayton-feat.-lewis-and-ariah-noetzel_guitar-3_guitar_one_shot_.wav.wav", 
+            "instrument": "guitar", 
+            "type": "one-shot", 
+            "pack": "Ethereal Guitar and Vocals"
+        }, 
+        {
+            "subinstrument": "guitar", 
+            "name": "carey-clayton-feat.-lewis-and-ariah-noetzel-guitar-4", 
+            "basename": "guitar-4", 
+            "bpm": "None", 
+            "filename": "carey-clayton-feat.-lewis-and-ariah-noetzel_guitar-4_guitar_one_shot_.wav.wav", 
+            "instrument": "guitar", 
+            "type": "one-shot", 
+            "pack": "Ethereal Guitar and Vocals"
+        }, 
+        {
+            "subinstrument": "guitar", 
+            "name": "carey-clayton-feat.-lewis-and-ariah-noetzel-guitar-loop-11", 
+            "basename": "guitar-loop-11", 
+            "bpm": "82", 
+            "filename": "carey-clayton-feat.-lewis-and-ariah-noetzel_guitar-loop-11_guitar_loop_82.wav.wav", 
+            "instrument": "guitar", 
+            "type": "loop", 
+            "pack": "Ethereal Guitar and Vocals"
+        }, 
+        {
+            "subinstrument": "guitar", 
+            "name": "carey-clayton-feat.-lewis-and-ariah-noetzel-guitar-loop-12", 
+            "basename": "guitar-loop-12", 
+            "bpm": "82", 
+            "filename": "carey-clayton-feat.-lewis-and-ariah-noetzel_guitar-loop-12_guitar_loop_82.wav.wav", 
+            "instrument": "guitar", 
+            "type": "loop", 
+            "pack": "Ethereal Guitar and Vocals"
+        }, 
+        {
+            "subinstrument": "guitar", 
+            "name": "carey-clayton-feat.-lewis-and-ariah-noetzel-guitar-loop-13", 
+            "basename": "guitar-loop-13", 
+            "bpm": "82", 
+            "filename": "carey-clayton-feat.-lewis-and-ariah-noetzel_guitar-loop-13_guitar_loop_82.wav.wav", 
+            "instrument": "guitar", 
+            "type": "loop", 
+            "pack": "Ethereal Guitar and Vocals"
+        }, 
+        {
+            "subinstrument": "guitar", 
+            "name": "carey-clayton-feat.-lewis-and-ariah-noetzel-guitar-loop-15", 
+            "basename": "guitar-loop-15", 
+            "bpm": "82", 
+            "filename": "carey-clayton-feat.-lewis-and-ariah-noetzel_guitar-loop-15_guitar_loop_82.wav.wav", 
+            "instrument": "guitar", 
+            "type": "loop", 
+            "pack": "Ethereal Guitar and Vocals"
+        }, 
+        {
+            "subinstrument": "guitar", 
+            "name": "carey-clayton-feat.-lewis-and-ariah-noetzel-guitar-stem-5", 
+            "basename": "guitar-stem-5", 
+            "bpm": "132", 
+            "filename": "carey-clayton-feat.-lewis-and-ariah-noetzel_guitar-stem-5_guitar_stem_132.wav.wav", 
+            "instrument": "guitar", 
+            "type": "stem", 
+            "pack": "Ethereal Guitar and Vocals"
+        }, 
+        {
+            "subinstrument": "guitar", 
+            "name": "carey-clayton-feat.-lewis-and-ariah-noetzel-guitar-stem-6", 
+            "basename": "guitar-stem-6", 
+            "bpm": "145", 
+            "filename": "carey-clayton-feat.-lewis-and-ariah-noetzel_guitar-stem-6_guitar_stem_145.wav.wav", 
+            "instrument": "guitar", 
+            "type": "stem", 
+            "pack": "Ethereal Guitar and Vocals"
+        }, 
+        {
+            "subinstrument": "ariah", 
+            "name": "carey-clayton-feat.-lewis-and-ariah-noetzel-ariah-1", 
+            "basename": "ariah-1", 
+            "bpm": "149", 
+            "filename": "carey-clayton-feat.-lewis-and-ariah-noetzel_ariah-1_vocals_one_shot_149.wav.wav", 
+            "instrument": "vocals", 
+            "type": "one-shot", 
+            "pack": "Ethereal Guitar and Vocals"
+        }, 
+        {
+            "subinstrument": "ariah", 
+            "name": "carey-clayton-feat.-lewis-and-ariah-noetzel-ariah-2", 
+            "basename": "ariah-2", 
+            "bpm": "149", 
+            "filename": "carey-clayton-feat.-lewis-and-ariah-noetzel_ariah-2_vocals_one_shot_149.wav.wav", 
+            "instrument": "vocals", 
+            "type": "one-shot", 
+            "pack": "Ethereal Guitar and Vocals"
+        }, 
+        {
+            "subinstrument": "ariah", 
+            "name": "carey-clayton-feat.-lewis-and-ariah-noetzel-ariah-3", 
+            "basename": "ariah-3", 
+            "bpm": "149", 
+            "filename": "carey-clayton-feat.-lewis-and-ariah-noetzel_ariah-3_vocals_one_shot_149.wav.wav", 
+            "instrument": "vocals", 
+            "type": "one-shot", 
+            "pack": "Ethereal Guitar and Vocals"
+        }, 
+        {
+            "subinstrument": "ariah", 
+            "name": "carey-clayton-feat.-lewis-and-ariah-noetzel-ariah-4", 
+            "basename": "ariah-4", 
+            "bpm": "149", 
+            "filename": "carey-clayton-feat.-lewis-and-ariah-noetzel_ariah-4_vocals_one_shot_149.wav.wav", 
+            "instrument": "vocals", 
+            "type": "one-shot", 
+            "pack": "Ethereal Guitar and Vocals"
+        }, 
+        {
+            "subinstrument": "lewis", 
+            "name": "carey-clayton-feat.-lewis-and-ariah-noetzel-lewis-14", 
+            "basename": "lewis-14", 
+            "bpm": "None", 
+            "filename": "carey-clayton-feat.-lewis-and-ariah-noetzel_lewis-14_vocals_one_shot_.wav.wav", 
+            "instrument": "vocals", 
+            "type": "one-shot", 
+            "pack": "Ethereal Guitar and Vocals"
+        }, 
+        {
+            "subinstrument": "lewis", 
+            "name": "carey-clayton-feat.-lewis-and-ariah-noetzel-lewis-22", 
+            "basename": "lewis-22", 
+            "bpm": "None", 
+            "filename": "carey-clayton-feat.-lewis-and-ariah-noetzel_lewis-22_vocals_one_shot_.wav.wav", 
+            "instrument": "vocals", 
+            "type": "one-shot", 
+            "pack": "Ethereal Guitar and Vocals"
+        }, 
+        {
+            "subinstrument": "lewis", 
+            "name": "carey-clayton-feat.-lewis-and-ariah-noetzel-lewis-2", 
+            "basename": "lewis-2", 
+            "bpm": "None", 
+            "filename": "carey-clayton-feat.-lewis-and-ariah-noetzel_lewis-2_vocals_one_shot_.wav.wav", 
+            "instrument": "vocals", 
+            "type": "one-shot", 
+            "pack": "Ethereal Guitar and Vocals"
+        }, 
+        {
+            "subinstrument": "lewis", 
+            "name": "carey-clayton-feat.-lewis-and-ariah-noetzel-lewis-3", 
+            "basename": "lewis-3", 
+            "bpm": "None", 
+            "filename": "carey-clayton-feat.-lewis-and-ariah-noetzel_lewis-3_vocals_one_shot_.wav.wav", 
+            "instrument": "vocals", 
+            "type": "one-shot", 
+            "pack": "Ethereal Guitar and Vocals"
+        }, 
+        {
+            "subinstrument": "lewis", 
+            "name": "carey-clayton-feat.-lewis-and-ariah-noetzel-lewis-9", 
+            "basename": "lewis-9", 
+            "bpm": "None", 
+            "filename": "carey-clayton-feat.-lewis-and-ariah-noetzel_lewis-9_vocals_one_shot_.wav.wav", 
+            "instrument": "vocals", 
+            "type": "one-shot", 
+            "pack": "Ethereal Guitar and Vocals"
+        }, 
+        {
+            "subinstrument": "lewis", 
+            "name": "carey-clayton-feat.-lewis-and-ariah-noetzel-lewis-loop-1", 
+            "basename": "lewis-loop-1", 
+            "bpm": "142", 
+            "filename": "carey-clayton-feat.-lewis-and-ariah-noetzel_lewis-loop-1_vocals_loop_142.wav.wav", 
+            "instrument": "vocals", 
+            "type": "loop", 
+            "pack": "Ethereal Guitar and Vocals"
+        }
+    ]
+}

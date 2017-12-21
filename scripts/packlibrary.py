@@ -69,7 +69,7 @@ class PackLibrary:
     def setsubinstrument(self):
         for pack in self.data.keys():
             if not self.data[pack][0]["subinstrument"]:
-                instrument_library = InstrumentLibrary(self.data[pack])
+                instrument_library = InstrumentLibrary(self.data[pack], pack)
                 instrument_library.populate()
                 new_pack = instrument_library.sort()
                 self.data[pack] = new_pack
