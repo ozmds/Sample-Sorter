@@ -88,4 +88,7 @@ class InstrumentLibrary:
                     confirm = self.setconfirm(confirm)
             sample_list = self.setsubinstrument(self.instrumentpack[instrument], possible_options)
             new_pack = new_pack + sample_list
-        return new_pack
+        cont = raw_input('Would you like to continue? Press y to sort next pack: ')
+        cont = self.setconfirm(cont)
+        new_dict = {'samples': new_pack, 'continue': cont}
+        return new_dict

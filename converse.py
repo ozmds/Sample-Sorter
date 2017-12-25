@@ -7,7 +7,8 @@ def main():
     packlibrary.PackLibrary('source files',
                             'sorted files',
                             'data/count.json',
-                            'data/pack.json').create(sys.argv)
+                            'data/pack.json',
+                            'css/main.css').create(sys.argv)
 
 if __name__ == '__main__':
     main()

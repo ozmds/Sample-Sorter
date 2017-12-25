@@ -7,7 +7,7 @@ class Sample:
         self.name = None
         self.basename = None
         self.bpm = 0
-        self.subinstrument = None
+        self.subinstrument = str(None)
 
         self.dupindex = None
 

@@ -5,12 +5,13 @@ from instrumentlibrary import InstrumentLibrary
 from packreport import PackLibraryReport
 
 class PackLibrary:
-    def __init__(self, spath, dpath, countfile, datafile):
+    def __init__(self, spath, dpath, countfile, datafile, css):
         self.data = {}
         self.sourcepath = os.path.abspath(spath)
         self.destpath = os.path.abspath(dpath)
         self.countfile = countfile
         self.datafile = datafile
+        self.css = css
 
     def addsample(self, f, pack):
         sample = Sample(f, pack)
@@ -68,33 +69,34 @@ class PackLibrary:
 
     def setsubinstrument(self):
         for pack in self.data.keys():
-            if not self.data[pack][0]["subinstrument"]:
+            if self.data[pack][0]["subinstrument"] == str(None):
                 instrument_library = InstrumentLibrary(self.data[pack], pack)
                 instrument_library.populate()
                 new_pack = instrument_library.sort()
-                self.data[pack] = new_pack
+                if new_pack['continue'] == False:
+                    break
+                else:
+                    self.data[pack] = new_pack['samples']
 
     def create(self, arguments):
         if len(arguments) == 2 and arguments[1] == 'delete':
             shutil.rmtree(self.destpath)
             os.remove(self.datafile)
-
-        self.trycreatepath(self.destpath)
-
-        if not os.path.exists(self.datafile):
-            self.initJSON()
         else:
-            self.editJSON()
+            self.trycreatepath(self.destpath)
 
-        self.setsubinstrument()
+            if not os.path.exists(self.datafile):
+                self.initJSON()
+            else:
+                self.editJSON()
 
-        file = open(self.datafile, 'w')
-        file.write(json.dumps(self.data, indent=4))
-        file.close()
+            self.setsubinstrument()
 
-        if len(arguments) == 1:
-            self.sortfiles()
-        elif arguments[1] != 'delete':
-            self.sortfiles(sys.argv[1:])
+            file = open(self.datafile, 'w')
+            file.write(json.dumps(self.data, indent=4))
+            file.close()
 
-        PackLibraryReport(self.data, self.countfile)
+            if len(arguments) == 1:
+                self.sortfiles()
+
+            PackLibraryReport(self.data, self.countfile, self.css)
