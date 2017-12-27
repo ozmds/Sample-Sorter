@@ -44,11 +44,24 @@ class PackLibrary:
 
     def sortfiles(self, order=['instrument', 'subinstrument', 'type', 'bpm', 'pack']):
         for pack in self.data.keys():
-            for sample in self.data[pack]:
-                path = self.createorderpath(order, sample)
+            for i in range(len(self.data[pack])):
+                path = self.createorderpath(order, self.data[pack][i])
                 self.trycreatepath(path)
-                if not sample["name"] + '.wav' in os.listdir(path):
-                    self.movesample(path, pack, sample)
+                if not self.data[pack][i]["name"] + '.wav' in os.listdir(path):
+                    if self.data[pack][i]["sortedpath"] != str(None):
+                        os.remove(self.data[pack][i]["sortedpath"])
+                        sortedpath = self.data[pack][i]["sortedpath"].split('/')
+                        sortedpath.pop()
+                        while sortedpath != []:
+                            print('/'.join(sortedpath))
+                            print(os.listdir('/'.join(sortedpath)))
+                            if os.listdir('/'.join(sortedpath)) == []:
+                                os.rmdir('/'.join(sortedpath))
+                                sortedpath.pop()
+                            else:
+                                break
+                    self.movesample(path, pack, self.data[pack][i])
+                    self.data[pack][i]["sortedpath"] = path + '/' + self.data[pack][i]["name"] + '.wav'
 
     def initJSON(self):
         self.data = {}
@@ -76,11 +89,10 @@ class PackLibrary:
                 instrument_library = InstrumentLibrary(self.data[pack], pack)
                 instrument_library.populate()
                 new_pack = instrument_library.sort()
+                self.data[pack] = new_pack['samples']
+                words[pack] = new_pack['words']
                 if new_pack['continue'] == False:
                     break
-                else:
-                    self.data[pack] = new_pack['samples']
-                words[pack] = new_pack['words']
 
         return words
 
@@ -102,12 +114,12 @@ class PackLibrary:
 
             data = {'samples': self.data, 'words': self.words}
 
+            if len(arguments) == 1:
+                self.sortfiles()
+
             file = open(self.datafile, 'w')
             file.write(json.dumps(data, indent=4))
             file.close()
-
-            if len(arguments) == 1:
-                self.sortfiles()
 
             PackLibraryReport(self.data, self.countfile, self.css)
             InstrumentLibraryReport(self.words, self.css)

@@ -8,6 +8,7 @@ class Sample:
         self.basename = None
         self.bpm = 0
         self.subinstrument = str(None)
+        self.sortedpath = str(None)
 
         self.dupindex = None
 
@@ -23,6 +24,7 @@ class Sample:
         data["basename"] = self.basename
         data["bpm"] = self.bpm
         data["subinstrument"] = self.subinstrument
+        data["sortedpath"] = self.sortedpath
 
         return data
 
