@@ -3,10 +3,12 @@ import os, os.path, shutil, sys, time, json, copy
 from sample import Sample
 from instrumentlibrary import InstrumentLibrary
 from packreport import PackLibraryReport
+from instrumentreport import InstrumentLibraryReport
 
 class PackLibrary:
     def __init__(self, spath, dpath, countfile, datafile, css):
         self.data = {}
+        self.words = {}
         self.sourcepath = os.path.abspath(spath)
         self.destpath = os.path.abspath(dpath)
         self.countfile = countfile
@@ -59,6 +61,7 @@ class PackLibrary:
 
     def editJSON(self):
         self.data = json.loads(open(self.datafile, 'r').read())
+        self.data = self.data['samples']
         for pack in os.listdir(self.sourcepath):
             sample_list = os.listdir(os.path.join(self.sourcepath, pack))
             pack_count = len(sample_list)
@@ -67,7 +70,7 @@ class PackLibrary:
                 for f in sample_list:
                     self.addfile(f, sample_list, pack)
 
-    def setsubinstrument(self):
+    def setsubinstrument(self, words={}):
         for pack in self.data.keys():
             if self.data[pack][0]["subinstrument"] == str(None):
                 instrument_library = InstrumentLibrary(self.data[pack], pack)
@@ -77,6 +80,9 @@ class PackLibrary:
                     break
                 else:
                     self.data[pack] = new_pack['samples']
+                words[pack] = new_pack['words']
+
+        return words
 
     def create(self, arguments):
         if len(arguments) == 2 and arguments[1] == 'delete':
@@ -87,16 +93,21 @@ class PackLibrary:
 
             if not os.path.exists(self.datafile):
                 self.initJSON()
+                self.words = self.setsubinstrument()
             else:
                 self.editJSON()
+                words = json.loads(open(self.datafile, 'r').read())
+                words = words['words']
+                self.words = self.setsubinstrument(words)
 
-            self.setsubinstrument()
+            data = {'samples': self.data, 'words': self.words}
 
             file = open(self.datafile, 'w')
-            file.write(json.dumps(self.data, indent=4))
+            file.write(json.dumps(data, indent=4))
             file.close()
 
             if len(arguments) == 1:
                 self.sortfiles()
 
             PackLibraryReport(self.data, self.countfile, self.css)
+            InstrumentLibraryReport(self.words, self.css)

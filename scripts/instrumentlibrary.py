@@ -59,20 +59,30 @@ class InstrumentLibrary:
 
     def setsubinstrument(self, sample_list, possible_options):
         new_samples = []
+        new_dict = {}
+        new_dict['other'] = 0
         for sample in sample_list:
             for word in possible_options:
                 if word in sample["basename"]:
                     sample["subinstrument"] = word
+                    if word in new_dict.keys():
+                        new_dict[word] += 1
+                    else:
+                        new_dict[word] = 1
                     break
-            if sample["subinstrument"] == None:
+            if sample["subinstrument"] == str(None):
                 sample["subinstrument"] = 'other'
+                new_dict['other'] += 1
             new_samples.append(sample)
 
-        return new_samples
+        return {'samples': new_samples, 'words': new_dict}
 
     def sort(self):
         new_pack = []
+        new_dict = {}
+        new_dict['words'] = {}
         for instrument in self.library.keys():
+            new_dict['words'][instrument] = {}
             print self.packname + ': ' + instrument
             self.listallwords(self.library[instrument])
             confirm = False
@@ -87,8 +97,11 @@ class InstrumentLibrary:
                     confirm = raw_input('This would categorize ' + str(count) + ' of a possible ' + str(len(self.instrumentpack[instrument])) + ' samples, press y to confirm: ')
                     confirm = self.setconfirm(confirm)
             sample_list = self.setsubinstrument(self.instrumentpack[instrument], possible_options)
+            new_dict['words'][instrument] = sample_list['words']
+            new_dict['words'][instrument]['total'] = len(self.instrumentpack[instrument])
+            sample_list = sample_list['samples']
             new_pack = new_pack + sample_list
         cont = raw_input('Would you like to continue? Press y to sort next pack: ')
         cont = self.setconfirm(cont)
-        new_dict = {'samples': new_pack, 'continue': cont}
+        new_dict = {'samples': new_pack, 'continue': cont, 'words': new_dict}
         return new_dict

@@ -28,6 +28,7 @@ class PackLibraryReport():
         with doc.head:
             link(rel='stylesheet', href=css)
 
+        with doc:
             with table():
                 for i in range(len(data)):
                     with tr():

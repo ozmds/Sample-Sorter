@@ -3,7 +3,7 @@ sys.path.insert(1, os.path.abspath("../../auger"))
 sys.path.insert(2, os.path.abspath("../"))
 
 import auger
-import packlibrary, instrumentlibrary, packreport, sample, sortedlist
+import packlibrary, instrumentlibrary, packreport, instrumentreport, sample, sortedlist
 
 def main():
     packlibrary.PackLibrary('source files',
@@ -16,6 +16,7 @@ if __name__ == '__main__':
     with auger.magic([packlibrary,
                       instrumentlibrary,
                       packreport,
+                      instrumentreport,
                       sample,
                       sortedlist]):
         main()
