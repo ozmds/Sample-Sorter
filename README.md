@@ -1,3 +1,5 @@
+# Update: Archiving this repo as Converse Sample Library has been discontinued.
+
 # Sample-Sorter
 A small commandline tool that you can use to sort music samples from the [Converse Sample Library](https://www.conversesamplelibrary.com/).
 
